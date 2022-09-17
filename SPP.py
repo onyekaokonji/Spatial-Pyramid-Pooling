@@ -12,7 +12,7 @@ def SPP(self, n_samples, previous_conv_layer, previous_conv_layer_size, output_p
         maxpool = nn.MaxPool2d(kernel_size=(window_height, window_width), stride=(window_stride_x, window_stride_y))
         x = maxpool(previous_conv_layer)
 
-        spp = torch.cat((spp, x.view(n_samples, -1)), 1)
+        spp = torch.cat((x.view(n_samples, -1)), 1)
 
     return spp
 
