@@ -2,7 +2,7 @@ import math
 import torch
 import torch.nn as nn
 
-def SPP(self, previous_conv_layer, previous_conv_layer_size, output_pool_size):
+def SPP(self, previous_conv_layer, previous_conv_layer_size, output_pool_size=[4,2,1]):
     n_samples = previous_conv_layer.shape[0]
     
     for i in range(len(output_pool_size)):
