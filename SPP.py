@@ -2,7 +2,9 @@ import math
 import torch
 import torch.nn as nn
 
-def SPP(self, n_samples, previous_conv_layer, previous_conv_layer_size, output_pool_size):
+def SPP(self, previous_conv_layer, previous_conv_layer_size, output_pool_size):
+    n_samples = previous_conv_layer.shape[0]
+    
     for i in range(len(output_pool_size)):
         window_height = int(math.ceil(previous_conv_layer_size[0]/output_pool_size[i]))
         window_width = int(math.ceil(previous_conv_layer_size[1]/output_pool_size[i]))
